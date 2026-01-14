@@ -5,9 +5,9 @@
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 const deployedContracts = {
-  31337: {
+  11155111: {
     AuctionFactory: {
-      address: "0x8ce361602b935680e8dec218b820ff5056beb7af",
+      address: "0x70e9da06559f1f6d5dc5d204d0fdfbe6bcc913a6",
       abi: [
         {
           type: "constructor",
@@ -114,10 +114,10 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deployedOnBlock: 19,
+      deployedOnBlock: 10045144,
     },
     Auction: {
-      address: "0xe1aa25618fa0c7a1cfdab5d6b456af611873b629",
+      address: "0xa9dbf41b03dbefee413d523baec9c9b59a5fc7de",
       abi: [
         {
           type: "constructor",
@@ -361,7 +361,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deployedOnBlock: 20,
+      deployedOnBlock: 10045144,
     },
   },
 } as const;

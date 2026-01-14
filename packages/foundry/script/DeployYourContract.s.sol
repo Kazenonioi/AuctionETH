@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import "./DeployHelpers.s.sol";
-import "../contracts/YourContract.sol";
+import "../contracts/AuctionFactory.sol";
 
 /**
  * @notice Deploy script for YourContract contract
@@ -25,6 +25,14 @@ contract DeployYourContract is ScaffoldETHDeploy {
      *      - Export contract addresses & ABIs to `nextjs` packages
      */
     function run() external ScaffoldEthDeployerRunner {
-        new YourContract(deployer);
+        new AuctionFactory();
+        new Auction(
+            address(0),
+            payable(address(0)),
+            "0",
+            0,
+            1,
+            payable(address(0))
+        );
     }
 }

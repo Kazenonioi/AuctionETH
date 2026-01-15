@@ -4,26 +4,6 @@
 import Link from "next/link";
 import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
-// packages/nextjs/app/page.tsx
-
 export default function Home() {
   // 1. 自动读取 Factory 合约里的 auctions 数组
   const { data: auctionAddresses } = useScaffoldReadContract({

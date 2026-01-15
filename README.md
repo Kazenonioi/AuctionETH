@@ -27,7 +27,7 @@ Anyone can create an auction, place bids, get refunds if outbid, and the seller 
 - **Frontend** — Scaffold-ETH 2
 - **Deployment** — Sepolia testnet (contract), Vercel (frontend)
 
-## How to Run Locally (Under Construction)
+## How to Run Locally
 
 ### Prerequisites
 

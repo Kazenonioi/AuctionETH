@@ -61,7 +61,6 @@ cd packages/nextjs   # or root if monorepo structure
 yarn install
 yarn dev             # Start local dev server → http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000/?referrer=grok.com) in browser, connect wallet (Sepolia), and interact with the auction.
 ```
 ## Security Considerations
 

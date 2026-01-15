@@ -37,31 +37,13 @@ Anyone can create an auction, place bids, get refunds if outbid, and the seller 
 
 ### Backend (Smart Contract)
 
-```bash
-# Clone repo
-git clone https://github.com/Kazenonioii/AuctionETH.git
-cd AuctionETH
-
-# Install dependencies (if using Foundry for contract)
-forge install
-
-# Run tests
-forge test
-forge test --gas-report   # Optional: see gas usage
-
-# Deploy to Sepolia (example with Foundry script)
-forge script script/DeployAuction.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast --verify
+[https://docs.scaffoldeth.io/deploying/deploy-smart-contracts](https://docs.scaffoldeth.io/deploying/deploy-smart-contracts)
 
 
-### Frontend
+### Fronted
 
-Bash
-cd packages/nextjs   # or root if monorepo structure
+[https://docs.scaffoldeth.io/deploying/deploy-nextjs-app](https://docs.scaffoldeth.io/deploying/deploy-nextjs-app)
 
-yarn install
-yarn dev             # Start local dev server → http://localhost:3000
-
-```
 ## Security Considerations
 
 - Reentrancy guard on fund withdrawal

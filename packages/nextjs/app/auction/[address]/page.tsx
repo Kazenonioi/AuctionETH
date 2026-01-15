@@ -42,9 +42,9 @@ export default function AuctionPage() {
           {/* 状态标签 */}
           <div className="flex justify-center mb-2">
             {isExpired ? (
-              <div className="badge badge-error gap-2 text-white">● 已结束</div>
+              <div className="badge badge-error gap-2 text-white">● Ended</div>
             ) : (
-              <div className="badge badge-success gap-2 text-white font-bold animate-pulse">● 进行中</div>
+              <div className="badge badge-success gap-2 text-white font-bold animate-pulse">● Auction</div>
             )}
           </div>
 
@@ -53,7 +53,7 @@ export default function AuctionPage() {
 
           {/* 结束时间显示 */}
           <div className="bg-base-200 rounded-xl p-3 my-4 flex flex-col items-center">
-            <span className="text-xs opacity-60 uppercase font-bold">结束时间</span>
+            <span className="text-xs opacity-60 uppercase font-bold">End at</span>
             <span className={`text-sm font-semibold ${isExpired ? "text-error" : "text-base-content"}`}>
               {endTimeDate ? endTimeDate.toLocaleString() : "正在获取..."}
             </span>
@@ -61,7 +61,7 @@ export default function AuctionPage() {
 
           <div className="stats shadow bg-base-200 mb-6">
             <div className="stat text-center">
-              <div className="stat-title">当前最高出价</div>
+              <div className="stat-title">Highest Bid</div>
               <div className="stat-value text-blue-600 text-3xl">
                 {highestBid ? formatEther(highestBid) : "0"} <span className="text-sm">ETH</span>
               </div>
@@ -75,7 +75,7 @@ export default function AuctionPage() {
                 <input
                   type="number"
                   step="0.01"
-                  placeholder="出价金额"
+                  placeholder="Your bid"
                   className="input input-bordered join-item w-full"
                   value={bidAmount}
                   onChange={e => setBidAmount(e.target.value)}
@@ -96,17 +96,17 @@ export default function AuctionPage() {
                       });
                       setBidAmount("");
                     } catch (e) {
-                      console.error("出价失败:", e);
+                      console.error("Fail to bid:", e);
                     }
                   }}
                 >
-                  {isPending ? "提交中..." : "提交出价"}
+                  {isPending ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </div>
           ) : (
             <div className="alert alert-warning text-sm py-2">
-              <span>拍卖已到达设定时间。</span>
+              <span>The auction has ended.</span>
             </div>
           )}
 
@@ -116,20 +116,20 @@ export default function AuctionPage() {
               className="btn btn-ghost btn-xs underline"
               onClick={() => writeContractAsync({ functionName: "claimReturns", address: address })}
             >
-              撤回资金
+              Withdraw
             </button>
             {/* 只有时间到了，结束拍卖按钮才显得重要 */}
             <button
               className={`btn btn-ghost btn-xs underline ${isExpired ? "text-error font-bold" : "text-gray-400"}`}
               onClick={() => writeContractAsync({ functionName: "auctionEnd", address: address })}
             >
-              结算拍卖
+              Settle
             </button>
             <button
               className={`btn btn-ghost btn-xs underline text-red-400`}
               onClick={() => writeContractAsync({ functionName: "forceEndAuction", address: address })}
             >
-              强制结束
+              Force End
             </button>
           </div>
         </div>

@@ -27,7 +27,7 @@ export default function CreateAuction() {
       // 成功后跳转回首页查看列表
       router.push("/");
     } catch (e) {
-      console.error("创建拍卖失败:", e);
+      console.error("Failed to create:", e);
     }
   };
 
@@ -35,7 +35,7 @@ export default function CreateAuction() {
     <div className="flex justify-center items-center py-12 px-4">
       <div className="card w-full max-w-lg bg-base-100 shadow-2xl border border-base-300">
         <div className="card-body">
-          <h2 className="card-title text-3xl font-bold justify-center text-primary mb-6">发起新拍卖</h2>
+          <h2 className="card-title text-3xl font-bold justify-center text-primary mb-6">New Auction</h2>
 
           <div className="space-y-4">
             {/* 描述 */}
@@ -74,18 +74,17 @@ export default function CreateAuction() {
 
             {/* 持续时间 */}
             <div className="form-control">
-              <label className="label font-bold text-xs uppercase">Duration (Seconds)</label>
+              <label className="label font-bold">Duration</label>
               <div className="flex gap-2">
                 <select
                   className="select select-bordered flex-1"
                   value={form.biddingTime}
                   onChange={e => setForm({ ...form, biddingTime: e.target.value })}
                 >
-                  <option value="60">1 分钟 (测试用)</option>
-                  <option value="600">10 分钟</option>
-                  <option value="3600">1 小时</option>
-                  <option value="86400">24 小时</option>
-                  <option value="604800">7 天</option>
+                  <option value="600">10 Minutes</option>
+                  <option value="3600">1 Hour</option>
+                  <option value="86400">24 Hours</option>
+                  <option value="604800">7 Days</option>
                 </select>
               </div>
             </div>
@@ -97,13 +96,13 @@ export default function CreateAuction() {
                 onClick={handleCreate}
                 disabled={isPending || !form.description || !form.beneficiary}
               >
-                {isPending ? "正在部署合约..." : "立即发布拍卖"}
+                {isPending ? "Creating..." : "Create"}
               </button>
             </div>
           </div>
 
           <div className="mt-4 text-center">
-            <p className="text-xs opacity-40">* 点击发布后，MetaMask 将弹出两次确认（如果合约需要）</p>
+            <p className="text-xs opacity-40">* A confirmation might be needed when creating.</p>
           </div>
         </div>
       </div>

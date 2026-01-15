@@ -5,7 +5,7 @@ A fully functional auction smart contract deployed on **Sepolia testnet**, with 
 
 Anyone can create an auction, place bids, get refunds if outbid, and the seller receives the highest bid minus a configurable service fee.
 
-[Live Demo](https://auction-eth-nextjs-git-main-kazenoniois-projects.vercel.app/)
+[Live Demo](https://auction-eth-nextjs-git-main-kazenoniois-projects.vercel.app/)  
 [Contract on Sepolia](https://sepolia.etherscan.io/address/0x70e9da06559f1f6d5dc5d204d0fdfbe6bcc913a6)
 
 ## Features
